@@ -5,14 +5,14 @@ import urllib.request
 from pathlib import Path
 from urllib.parse import urljoin
 
-BASE_URL = "https://cf23-config.nnt.gg/"
+BASE_URL = "https://cp7-config.nnt.gg/"
 DATA_DIR = Path(__file__).parent.parent / "data"
 
 
 def read_json(location: str) -> dict:
     if location.startswith(("http://", "https://")):
         request = urllib.request.Request(
-            location, headers={"User-Agent": "cf23-map-data-fetcher"}
+            location, headers={"User-Agent": "cp7-map-data-fetcher"}
         )
         with urllib.request.urlopen(request) as response:
             return json.loads(response.read().decode())
@@ -41,7 +41,7 @@ def main() -> None:
     parser.add_argument(
         "--source",
         default=BASE_URL,
-        help="Site base URL or local cf23-data/public directory",
+        help="Site base URL or local config public directory",
     )
     parser.add_argument(
         "--allow-unversioned",

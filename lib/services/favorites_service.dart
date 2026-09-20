@@ -8,7 +8,7 @@ import '../utils/url_encoding.dart';
 import 'creator_data_service.dart';
 
 class FavoritesService extends ChangeNotifier {
-  static const String _favoritesIdsKey = 'cf23_favorite_creator_ids';
+  static const String _favoritesIdsKey = 'cp7_favorite_creator_ids';
   static SharedPreferences? _prefs;
 
   // Local state for fast synchronous access

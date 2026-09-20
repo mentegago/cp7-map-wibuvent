@@ -12,7 +12,7 @@ import '../utils/string_utils.dart';
 import 'recommendation_engine.dart';
 
 class RecommendationService extends ChangeNotifier {
-  static const String _storageKey = 'cf23_recommendation_profile_v2';
+  static const String _storageKey = 'cp7_recommendation_profile_v2';
   static const Duration _saveDelay = Duration(milliseconds: 500);
   static Future<BoothProximityData>? _boothProximityLoad;
 

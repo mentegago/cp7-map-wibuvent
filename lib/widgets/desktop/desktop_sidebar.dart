@@ -117,7 +117,7 @@ class _DesktopSidebarState extends State<DesktopSidebar> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CfKicker('CF23 creator directory'),
+                const CfKicker('Comipara 7 creator directory'),
                 const SizedBox(height: 10),
                 _buildSearchField(context, theme, isDark),
               ],

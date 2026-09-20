@@ -423,7 +423,7 @@ class _CreatorListViewState extends State<CreatorListView> {
         child: Text(
           isCreatorCustomListMode
               ? 'Custom Creators List'
-              : 'All Comifuro 23 Creators',
+              : 'All Comipara 7 Creators',
           style: TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w600,

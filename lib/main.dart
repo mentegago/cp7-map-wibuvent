@@ -56,7 +56,7 @@ class CFMapApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'CF23 Booth Map',
+        title: 'Comipara 7 Map',
         theme: buildCfTheme(Brightness.light),
         darkTheme: buildCfTheme(Brightness.dark),
         themeMode: ThemeMode.system,

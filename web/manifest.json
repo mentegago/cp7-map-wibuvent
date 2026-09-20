@@ -1,11 +1,11 @@
 {
-    "name": "CF23 Booth Map",
-    "short_name": "CF23 Map",
+    "name": "Comipara 7 Booth Map",
+    "short_name": "Comipara 7 Map",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#21192a",
     "theme_color": "#21192a",
-    "description": "Interactive booth map viewer for Comifuro 23 (CF23) event. Search for creators and navigate their booth locations.",
+    "description": "Interactive booth map viewer for Comipara 7. Search for creators and navigate their booth locations.",
     "orientation": "any",
     "prefer_related_applications": false,
     "icons": [

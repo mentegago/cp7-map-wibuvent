@@ -8,9 +8,9 @@ import 'catalog_idb_factory.dart';
 /// does not sit in localStorage's 5MB quota. Other platforms keep using
 /// SharedPreferences. Existing localStorage copies are migrated once.
 class CatalogSnapshotCache {
-  static const prefsSnapshotKey = 'cf23_catalog_snapshot_v3';
-  static const prefsVersionKey = 'cf23_catalog_snapshot_version_v3';
-  static const _dbName = 'cf23-map';
+  static const prefsSnapshotKey = 'cp7_catalog_snapshot_v3';
+  static const prefsVersionKey = 'cp7_catalog_snapshot_version_v3';
+  static const _dbName = 'cp7-map';
   static const _storeName = 'catalog';
   static const _recordKey = 'snapshot_v3';
 

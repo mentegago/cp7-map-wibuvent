@@ -1,91 +1,17 @@
-# CF23 Booth Map
+# Comipara 7 Booth Map
 
-Aplikasi web untuk melihat peta booth creator di acara Comifuro 23 (CF23).
+Aplikasi Flutter web untuk melihat peta booth creator di acara Comipara 7.
 
-## Fitur
+## Data
 
-- 🗺️ **Peta Interaktif** - Lihat seluruh layout booth acara CF23
-- 🔍 **Pencarian Creator** - Cari dan temukan booth creator favorit kamu
-- 🔗 **Share Link** - Bagikan link langsung ke booth creator tertentu
+- Peta booth dibundel di `data/map.json`.
+- Katalog awal dikonversi dari Cardinal API oleh `tools/convert_cardinal_data.py`.
+- Pembaruan katalog runtime diambil dari `https://cp7-config.nnt.gg` menggunakan katalog v1 yang sama.
 
-## Cara Pakai
-
-1. Buka website
-2. Geser dan zoom untuk navigasi peta
-3. Tap search bar di atas untuk cari creator
-4. Pilih creator untuk lihat lokasi booth mereka
-5. Tap booth di peta untuk lihat detail creator
-
-## Build (Khusus buat developer)
-
-App ini dibuat menggunakan Flutter.
+Untuk memperbarui data awal dari Cardinal:
 
 ```bash
-# Install dependencies
-flutter pub get
-
-# Run di browser
-flutter run -d chrome
-
-# Build untuk production
-flutter build web --release
+python tools/convert_cardinal_data.py
 ```
 
-### Data jarak booth
-
-Rekomendasi lokasi memakai jarak jalan kaki yang sudah dihitung dari
-`data/map.json`, bukan menghitung BFS di perangkat pengguna. Setelah layout peta
-berubah, buat ulang datanya dan commit kedua file tersebut:
-
-```bash
-python tools/generate_booth_proximity.py
-git add data/map.json data/booth-proximity.json
-```
-
-Untuk memastikan data yang di-commit masih sesuai dengan peta:
-
-```bash
-python tools/generate_booth_proximity.py --check
-```
-
-`data/map.json` mendukung format semantic map schema v2 dari Event Canvas:
-setiap booth, highlight, area, dan teks memiliki koordinat serta ukurannya
-sendiri. Annotation dapat memakai semantic `type`, misalnya `section-marker`
-atau `booth-suffix-marker`, untuk styling yang konsisten. Format grid/CSV lama
-tetap dapat dibaca untuk kompatibilitas. Untuk
-semantic map, jarak rekomendasi diperkirakan dari posisi booth; data grid lama
-tetap memakai jarak lorong berbasis BFS.
-
-Benchmark untuk inti kalkulasi rekomendasi (tanpa waktu render UI) dapat
-dijalankan dengan:
-
-```bash
-dart run tools/benchmark_recommendation.dart
-```
-
-### Data creator dan fandom
-
-App memakai API katalog v1 dari `https://cf23-config.nnt.gg`: manifest,
-katalog exhibitor, dan registry fandom terpisah. Salinan ketiganya dibundel
-agar first launch tetap bekerja tanpa koneksi. Untuk memperbarui fallback dari
-deployment:
-
-```bash
-python tools/fetch_creator_data.py
-```
-
-Saat mengembangkan bersama checkout lokal `cf23-data`, gunakan:
-
-```bash
-python tools/fetch_creator_data.py --source ../cf23-data/public
-```
-
-## Kontribusi (Khusus buat developer)
-
-App ini merupakan app eksperimentasi saya, artinya saya bakal ngutak-ngatik terus app ini. Jika ada saran dan ingin contribute sesuatu, mungkin submit Issues dahulu. Kalau sudah oke, silakan submit PR. Mohon maaf atas keterbatasannya 🙇‍♂️
-
-
----
-
-See you at CF23 💖
-
+Script tersebut mengonversi data Cardinal ke `catalog-initial.json` serta `fandoms-initial.json`; model Flutter tetap memakai schema aplikasi v1.

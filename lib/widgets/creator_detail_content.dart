@@ -264,29 +264,6 @@ class _CreatorDetailContentState extends State<CreatorDetailContent> {
                   spacing: 8,
                   runSpacing: 8,
                   children: [
-                    if (widget.creator.id != -1)
-                      CfActionButton(
-                        icon: Icons.open_in_new,
-                        label: 'Circle Page',
-                        compact: true,
-                        color: context.cf.yellow,
-                        onPressed: () {
-                          umami.trackEvent(
-                            name: 'creator_circle_page_link_tapped',
-                            data: {
-                              'creator_id': widget.creator.id.toString(),
-                              'creator_name': widget.creator.name,
-                            },
-                          );
-                          context
-                              .read<RecommendationService>()
-                              .recordExternalLinkOpened(widget.creator);
-                          final url =
-                              'https://catalog.comifuro.net/circle/${widget.creator.id}';
-                          launchUrl(Uri.parse(url),
-                              mode: LaunchMode.externalApplication);
-                        },
-                      ),
                     if (widget.creator.assets.gallery.isNotEmpty)
                       CfActionButton(
                         icon: widget.creator.assets.gallery.length > 1
