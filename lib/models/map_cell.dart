@@ -62,6 +62,13 @@ class MapFeature {
   final double height;
   final String? color;
   final double rotation;
+  final double thickness;
+  final double? lineStartX;
+  final double? lineStartY;
+  final double? lineEndX;
+  final double? lineEndY;
+  final bool themeAware;
+  final double? fontSize;
 
   const MapFeature({
     required this.uid,
@@ -74,6 +81,13 @@ class MapFeature {
     required this.height,
     this.color,
     this.rotation = 0,
+    this.thickness = 1,
+    this.lineStartX,
+    this.lineStartY,
+    this.lineEndX,
+    this.lineEndY,
+    this.themeAware = false,
+    this.fontSize,
   });
 
   bool get isBooth => kind == 'booth';
@@ -83,8 +97,17 @@ class MapFeature {
   bool get isArea => kind == 'area';
   bool get isText => kind == 'text';
   bool get isWall => kind == 'wall';
+  bool get isArrow => kind == 'arrow';
+  bool get isLineIndicator =>
+      isArrow ||
+      (isWall &&
+          lineStartX != null &&
+          lineStartY != null &&
+          lineEndX != null &&
+          lineEndY != null);
   bool get isHall => kind == 'hall';
-  bool get isEmpty => content.trim().isEmpty && !isArea && !isHighlight;
+  bool get isEmpty =>
+      content.trim().isEmpty && !isArea && !isHighlight && !isLineIndicator;
   bool get isLocationMarker =>
       !isBooth && !isWall && !isHall && !isArea && !isText;
 

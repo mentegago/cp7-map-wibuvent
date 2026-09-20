@@ -80,7 +80,70 @@ void main() {
     expect(layout.features.first.width, MapParser.legacyCellSize * 2);
   });
 
-  test('the bundled CF23 map asset parses completely', () {
+  test('parses walls, arrows, and theme-aware text indicators', () {
+    final layout = MapParser.parseMapLayout({
+      'schemaVersion': 2,
+      'bounds': {'width': 500, 'height': 300},
+      'features': [
+        {
+          'uid': 'wall',
+          'kind': 'wall',
+          'label': '',
+          'themeAware': true,
+          'thickness': 8,
+          'geometry': {
+            'type': 'rect',
+            'x': 10,
+            'y': 20,
+            'width': 200,
+            'height': 0.1,
+          },
+          'lineStart': {'x': 0, 'y': 0.5},
+          'lineEnd': {'x': 1, 'y': 0.5},
+        },
+        {
+          'uid': 'arrow',
+          'kind': 'arrow',
+          'label': '',
+          'color': '#2563eb',
+          'thickness': 3,
+          'geometry': {
+            'type': 'rect',
+            'x': 20,
+            'y': 40,
+            'width': 100,
+            'height': 80,
+          },
+          'lineStart': {'x': 1, 'y': 0},
+          'lineEnd': {'x': 0, 'y': 1},
+        },
+        {
+          'uid': 'label',
+          'kind': 'text',
+          'label': 'Entrance',
+          'fontSize': 20,
+          'geometry': {
+            'type': 'rect',
+            'x': 100,
+            'y': 100,
+            'width': 120,
+            'height': 40,
+          },
+        },
+      ],
+    });
+
+    expect(layout.features[0].isLineIndicator, isTrue);
+    expect(layout.features[0].thickness, 8);
+    expect(layout.features[1].isArrow, isTrue);
+    expect(layout.features[1].lineStartX, 1);
+    expect(layout.features[1].lineEndY, 1);
+    expect(layout.features[2].isText, isTrue);
+    expect(layout.features[2].themeAware, isTrue);
+    expect(layout.features[2].fontSize, 20);
+  });
+
+  test('the bundled Comipara 7 map asset parses completely', () {
     final source = json.decode(File('data/map.json').readAsStringSync());
     final layout = MapParser.parseMapLayout(source);
 

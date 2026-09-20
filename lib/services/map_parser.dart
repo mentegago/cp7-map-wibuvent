@@ -58,6 +58,8 @@ class MapParser {
           featureWidth <= 0 ||
           featureHeight <= 0) continue;
       final kind = raw['kind']?.toString() ?? 'booth';
+      final lineStart = raw['lineStart'];
+      final lineEnd = raw['lineEnd'];
       final content = kind == 'booth'
           ? (raw['id']?.toString() ?? '')
           : (raw['label']?.toString() ?? '');
@@ -72,6 +74,21 @@ class MapParser {
         height: featureHeight,
         color: raw['color']?.toString(),
         rotation: (raw['rotation'] as num?)?.toDouble() ?? 0,
+        thickness: (raw['thickness'] as num?)?.toDouble() ?? 1,
+        lineStartX: lineStart is Map<String, dynamic>
+            ? (lineStart['x'] as num?)?.toDouble()
+            : null,
+        lineStartY: lineStart is Map<String, dynamic>
+            ? (lineStart['y'] as num?)?.toDouble()
+            : null,
+        lineEndX: lineEnd is Map<String, dynamic>
+            ? (lineEnd['x'] as num?)?.toDouble()
+            : null,
+        lineEndY: lineEnd is Map<String, dynamic>
+            ? (lineEnd['y'] as num?)?.toDouble()
+            : null,
+        themeAware: (raw['themeAware'] as bool?) ?? kind == 'text',
+        fontSize: (raw['fontSize'] as num?)?.toDouble(),
       ));
     }
 

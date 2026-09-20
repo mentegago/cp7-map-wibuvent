@@ -21,6 +21,7 @@ class MapViewer extends StatefulWidget {
 class _MapViewerState extends State<MapViewer>
     with SingleTickerProviderStateMixin {
   static const double _spatialCellSize = 96;
+  static const double _legacyCellSize = 40;
   static const double _legacyRenderedBoothSize = 20;
   final TransformationController _transformationController =
       TransformationController();
@@ -28,6 +29,9 @@ class _MapViewerState extends State<MapViewer>
   late AnimationController _animationController;
   Animation<Matrix4>? _animation;
   MapFeature? _hoveredBooth;
+  double _baseFontSize = 12;
+  double _legacyToMapScale = 1;
+  bool _hasBoothScaleReference = false;
   int _animationId = 0;
 
   bool get _isDesktop => MediaQuery.of(context).size.width > 768;
@@ -84,24 +88,9 @@ class _MapViewerState extends State<MapViewer>
   }
 
   double _initialScale(Size viewport) {
-    var booths = widget.mapLayout.features
-        .where((feature) => feature.isBooth && feature.content.contains('-'))
-        .toList(growable: false);
-    if (booths.isEmpty) {
-      booths = widget.mapLayout.features
-          .where((feature) => feature.isBooth)
-          .toList(growable: false);
-    }
-    if (booths.isNotEmpty) {
-      final boothSizes = booths
-          .map((feature) => math.sqrt(feature.width * feature.height))
-          .where((size) => size > 0)
-          .toList()
-        ..sort();
-      if (boothSizes.isNotEmpty) {
-        final medianBoothSize = boothSizes[boothSizes.length ~/ 2];
-        return (_legacyRenderedBoothSize / medianBoothSize).clamp(0.2, 1.5);
-      }
+    if (_hasBoothScaleReference) {
+      return ((_legacyRenderedBoothSize / _legacyCellSize) * _legacyToMapScale)
+          .clamp(0.2, 1.5);
     }
 
     // Annotation-only maps have no booth scale to match, so fit them normally.
@@ -115,6 +104,12 @@ class _MapViewerState extends State<MapViewer>
 
   void _buildSpatialIndex() {
     _boothSpatialIndex.clear();
+    _baseFontSize = _mapBaseFontSize(widget.mapLayout.features);
+    final referenceBoothSize =
+        _mapReferenceBoothSize(widget.mapLayout.features);
+    _hasBoothScaleReference = referenceBoothSize != null;
+    _legacyToMapScale =
+        referenceBoothSize == null ? 1 : _legacyCellSize / referenceBoothSize;
     for (final feature
         in widget.mapLayout.features.where((item) => item.isBooth)) {
       final left = (feature.x / _spatialCellSize).floor();
@@ -190,12 +185,19 @@ class _MapViewerState extends State<MapViewer>
       final viewport = context.size ?? MediaQuery.of(context).size;
       final groupWidth = math.max(24.0, right - left);
       final groupHeight = math.max(24.0, bottom - top);
-      final targetScale = math
-          .min(
-            viewport.width * 0.32 / groupWidth,
-            viewport.height * 0.28 / groupHeight,
-          )
-          .clamp(0.45, 6.0);
+      final firstBoothId = booths.first.content;
+      final sectionSeparator = firstBoothId.indexOf('-');
+      final isMultiLetterSection = sectionSeparator > 1;
+      final legacyFocusScale = isMultiLetterSection ? 0.6 : 0.8;
+      final familiarFocusScale = legacyFocusScale * _legacyToMapScale;
+      final groupFitScale = math.min(
+        viewport.width * 0.62 / groupWidth,
+        viewport.height * 0.46 / groupHeight,
+      );
+      // Match the old map's apparent booth size. Only zoom farther out when a
+      // creator occupies booths too far apart to fit comfortably together.
+      final targetScale =
+          math.min(familiarFocusScale, groupFitScale).clamp(0.45, 6.0);
       final centerX = (left + right) / 2;
       final centerY = (top + bottom) / 2;
       final target = Matrix4.identity()
@@ -266,6 +268,7 @@ class _MapViewerState extends State<MapViewer>
                     backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                     boothToCreators: provider.boothToCreators,
                     isCreatorCustomListMode: provider.isCreatorCustomListMode,
+                    baseFontSize: _baseFontSize,
                   ),
                 ),
               ),
@@ -286,6 +289,7 @@ class _MapViewerState extends State<MapViewer>
                     painter: SelectionOverlayPainter(
                       selectedFeatures: selectedFeatures,
                       isDark: Theme.of(context).brightness == Brightness.dark,
+                      baseFontSize: _baseFontSize,
                     ),
                   ),
                 ),
@@ -303,6 +307,7 @@ class MapPainter extends CustomPainter {
   final Color backgroundColor;
   final Map<String, List<Creator>>? boothToCreators;
   final bool isCreatorCustomListMode;
+  final double baseFontSize;
 
   const MapPainter({
     required this.features,
@@ -310,6 +315,7 @@ class MapPainter extends CustomPainter {
     required this.backgroundColor,
     required this.boothToCreators,
     required this.isCreatorCustomListMode,
+    required this.baseFontSize,
   });
 
   @override
@@ -318,7 +324,8 @@ class MapPainter extends CustomPainter {
     for (final feature in features) {
       if (!feature.isBooth) _drawFeatureIfVisible(canvas, feature);
     }
-    // Booths are the primary interactive layer and must stay above map markers.
+    // Stored order is preserved within each tier. Booths stay above annotations,
+    // while active booths are painted once more by the final selection overlay.
     for (final feature in features) {
       if (feature.isBooth) _drawFeatureIfVisible(canvas, feature);
     }
@@ -334,8 +341,12 @@ class MapPainter extends CustomPainter {
   }
 
   void _drawFeature(Canvas canvas, MapFeature feature, Rect rect) {
+    if (feature.isLineIndicator) {
+      _drawLineIndicator(canvas, feature, rect);
+      return;
+    }
     if (feature.isText) {
-      _drawLabel(canvas, feature, rect, _featureColor(feature));
+      _drawLabel(canvas, feature, rect, _textFeatureColor(feature));
       return;
     }
     final fill = Paint()
@@ -369,6 +380,57 @@ class MapPainter extends CustomPainter {
                   : _textColor(feature);
       _drawLabel(canvas, feature, rect, textColor);
     }
+  }
+
+  void _drawLineIndicator(Canvas canvas, MapFeature feature, Rect rect) {
+    final start = Offset(
+      rect.left + rect.width * (feature.lineStartX ?? 0),
+      rect.top + rect.height * (feature.lineStartY ?? 0.5),
+    );
+    final end = Offset(
+      rect.left + rect.width * (feature.lineEndX ?? 1),
+      rect.top + rect.height * (feature.lineEndY ?? 0.5),
+    );
+    final color = feature.themeAware && feature.isWall
+        ? (isDark ? const Color(0xFFE5E7EB) : const Color(0xFF111827))
+        : _featureColor(feature);
+    final strokeWidth = math.max(0.5, feature.thickness);
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = strokeWidth
+      ..strokeCap = StrokeCap.round
+      ..style = PaintingStyle.stroke;
+    if (!feature.isArrow) {
+      canvas.drawLine(start, end, paint);
+      return;
+    }
+
+    final delta = end - start;
+    final length = delta.distance;
+    if (length <= 0.1) return;
+    final direction = delta / length;
+    final headLength = math.min(length * 0.38, math.max(strokeWidth * 3, 8.0));
+    final shaftEnd = end - direction * (headLength * 0.72);
+    canvas.drawLine(start, shaftEnd, paint);
+    final perpendicular = Offset(-direction.dy, direction.dx);
+    final base = end - direction * headLength;
+    final halfWidth = headLength * 0.52;
+    canvas.drawPath(
+      Path()
+        ..moveTo(end.dx, end.dy)
+        ..lineTo(
+          base.dx + perpendicular.dx * halfWidth,
+          base.dy + perpendicular.dy * halfWidth,
+        )
+        ..lineTo(
+          base.dx - perpendicular.dx * halfWidth,
+          base.dy - perpendicular.dy * halfWidth,
+        )
+        ..close(),
+      Paint()
+        ..color = color
+        ..style = PaintingStyle.fill,
+    );
   }
 
   Color _fillColor(MapFeature feature) {
@@ -445,6 +507,7 @@ class MapPainter extends CustomPainter {
       text,
       availableWidth,
       availableHeight,
+      baseFontSize,
     );
     final painter = TextPainter(
       text: TextSpan(
@@ -479,6 +542,13 @@ class MapPainter extends CustomPainter {
   Color _featureColor(MapFeature feature) =>
       _parseHexColor(feature.color) ??
       (isDark ? const Color(0xFF94A3B8) : const Color(0xFF64748B));
+
+  Color _textFeatureColor(MapFeature feature) {
+    if (feature.themeAware) {
+      return isDark ? const Color(0xFFF4F6FA) : const Color(0xFF111827);
+    }
+    return _featureColor(feature);
+  }
 
   String _boothSection(String id) {
     final separator = id.indexOf('-');
@@ -548,7 +618,8 @@ class MapPainter extends CustomPainter {
       oldDelegate.isDark != isDark ||
       oldDelegate.backgroundColor != backgroundColor ||
       oldDelegate.boothToCreators != boothToCreators ||
-      oldDelegate.isCreatorCustomListMode != isCreatorCustomListMode;
+      oldDelegate.isCreatorCustomListMode != isCreatorCustomListMode ||
+      oldDelegate.baseFontSize != baseFontSize;
 }
 
 class HoverOverlayPainter extends CustomPainter {
@@ -587,10 +658,12 @@ class HoverOverlayPainter extends CustomPainter {
 class SelectionOverlayPainter extends CustomPainter {
   final List<MapFeature> selectedFeatures;
   final bool isDark;
+  final double baseFontSize;
 
   const SelectionOverlayPainter({
     required this.selectedFeatures,
     required this.isDark,
+    required this.baseFontSize,
   });
 
   @override
@@ -622,6 +695,7 @@ class SelectionOverlayPainter extends CustomPainter {
       text,
       rect.width,
       rect.height,
+      baseFontSize,
     );
     final painter = TextPainter(
       text: TextSpan(
@@ -650,7 +724,8 @@ class SelectionOverlayPainter extends CustomPainter {
   @override
   bool shouldRepaint(SelectionOverlayPainter oldDelegate) =>
       oldDelegate.selectedFeatures != selectedFeatures ||
-      oldDelegate.isDark != isDark;
+      oldDelegate.isDark != isDark ||
+      oldDelegate.baseFontSize != baseFontSize;
 }
 
 Color? _parseHexColor(String? value) {
@@ -667,6 +742,7 @@ double _featureLabelFontSize(
   String text,
   double availableWidth,
   double availableHeight,
+  double baseFontSize,
 ) {
   final isCorporateBooth = feature.isBooth && !feature.content.contains('-');
   final heightFactor = feature.isText
@@ -675,7 +751,7 @@ double _featureLabelFontSize(
           ? 0.30
           : 0.42;
   final characterWidth = isCorporateBooth ? 0.70 : 0.58;
-  return math
+  final naturalSize = math
       .max(
         3,
         math.min(
@@ -684,4 +760,56 @@ double _featureLabelFontSize(
         ),
       )
       .toDouble();
+  final categoryMaximum = feature.isBooth
+      ? baseFontSize * 1.35
+      : feature.isText
+          ? baseFontSize * 2.25
+          : feature.isArea
+              ? baseFontSize * 1.8
+              : feature.isBoothSuffixMarker
+                  ? baseFontSize * 0.8
+                  : feature.isHighlight
+                      ? baseFontSize * 1.3
+                      : baseFontSize * 1.5;
+  final requested = feature.fontSize != null && feature.fontSize! > 0
+      ? feature.fontSize!
+      : math.min(naturalSize, categoryMaximum);
+  return math
+      .max(
+        3,
+        math.min(
+          requested,
+          math.min(
+            availableHeight * 0.9,
+            availableWidth / math.max(1.0, text.length * 0.52),
+          ),
+        ),
+      )
+      .toDouble();
+}
+
+double _mapBaseFontSize(List<MapFeature> features) {
+  final referenceBoothSize = _mapReferenceBoothSize(features);
+  if (referenceBoothSize == null) return 12;
+  return (referenceBoothSize * 0.8).clamp(6, 18);
+}
+
+double? _mapReferenceBoothSize(List<MapFeature> features) {
+  final boothSizes = features
+      .where((feature) => feature.isBooth && feature.content.contains('-'))
+      .map((feature) => math.sqrt(feature.width * feature.height))
+      .where((size) => size > 0)
+      .toList()
+    ..sort();
+  if (boothSizes.isEmpty) {
+    boothSizes.addAll(
+      features
+          .where((feature) => feature.isBooth)
+          .map((feature) => math.sqrt(feature.width * feature.height))
+          .where((size) => size > 0),
+    );
+    boothSizes.sort();
+  }
+  if (boothSizes.isEmpty) return null;
+  return boothSizes[boothSizes.length ~/ 2];
 }
