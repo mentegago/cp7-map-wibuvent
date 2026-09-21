@@ -6,6 +6,7 @@ import hashlib
 import json
 import urllib.request
 from pathlib import Path
+from urllib.parse import urlparse
 
 
 DEFAULT_SOURCE = "https://cardinal.wibuvent.com/api/v1/events/comipara-7/circles"
@@ -30,6 +31,30 @@ def stable_id(value: str, used: set[int]) -> int:
         candidate = candidate + 1 if candidate < 0x7FFFFFFF else 1
     used.add(candidate)
     return candidate
+
+
+def normalize_url(value: str) -> str:
+    url = value.strip()
+    if url and not urlparse(url).scheme:
+        return f"https://{url}"
+    return url
+
+
+def link_type(value: str) -> str:
+    host = urlparse(normalize_url(value)).netloc.lower().removeprefix("www.")
+    if host == "facebook.com" or host.endswith(".facebook.com"):
+        return "facebook"
+    if host in {"instagram.com", "instagr.am"} or host.endswith(".instagram.com"):
+        return "instagram"
+    if host in {"x.com", "twitter.com", "t.co"} or host.endswith(".twitter.com"):
+        return "twitter"
+    marketplace_hosts = (
+        "shopee.", "tokopedia.", "booth.pm", "gumroad.com", "ko-fi.com",
+        "karyakarsa.com", "trakteer.id", "sociabuzz.com", "etsy.com",
+    )
+    if any(host == domain or host.endswith(domain) for domain in marketplace_hosts):
+        return "marketplace"
+    return "other"
 
 
 def convert(document: dict) -> tuple[dict, dict]:
@@ -72,9 +97,12 @@ def convert(document: dict) -> tuple[dict, dict]:
             if str(name).strip().casefold() in fandom_id_by_key
         ]
         links = [
-            {"type": "link", "url": str(link.get("url", "")).strip()}
+            {
+                "type": link_type(str(link.get("url", ""))),
+                "url": normalize_url(str(link.get("url", ""))),
+            }
             for link in circle.get("urls") or []
-            if isinstance(link, dict) and str(link.get("url", "")).strip()
+            if isinstance(link, dict) and normalize_url(str(link.get("url", "")))
         ]
         exhibitors.append(
             {

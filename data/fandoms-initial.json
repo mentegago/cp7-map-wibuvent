@@ -406,1105 +406,1147 @@
     },
     {
       "id": 58,
-      "name": "Gokurakugai",
+      "name": "Girls' Last Tour",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 59,
-      "name": "Good Omens",
+      "name": "Gokurakugai",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 60,
-      "name": "Goodbye Lara",
+      "name": "Good Omens",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 61,
-      "name": "Granblue Fantasy",
+      "name": "Goodbye Lara",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 62,
-      "name": "Gravity Falls",
+      "name": "Granblue Fantasy",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 63,
-      "name": "Hades",
+      "name": "Gravity Falls",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 64,
-      "name": "Hai Miiko",
+      "name": "Hades",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 65,
-      "name": "Haikyu!!",
+      "name": "Hai Miiko",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 66,
-      "name": "Hannibal",
+      "name": "Haikyu!!",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 67,
-      "name": "Harry Potter",
+      "name": "Hannibal",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 68,
-      "name": "Hazbin Hotel",
+      "name": "Harry Potter",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 69,
-      "name": "Heated Rivalry",
+      "name": "Hazbin Hotel",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 70,
-      "name": "Heaven Official's Blessing",
+      "name": "Heated Rivalry",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 71,
-      "name": "Hetalia",
+      "name": "Heaven Official's Blessing",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 72,
-      "name": "Hololive",
+      "name": "Hetalia",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 73,
-      "name": "HOLOSTARS English",
+      "name": "Hololive",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 74,
-      "name": "Honkai Impact 3rd",
+      "name": "HOLOSTARS English",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 75,
-      "name": "Honkai: Star Rail",
+      "name": "Honkai Impact 3rd",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 76,
-      "name": "Hotline Miami",
+      "name": "Honkai: Star Rail",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 77,
-      "name": "Hunter x Hunter",
+      "name": "Hotline Miami",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 78,
-      "name": "Hybrid Child",
+      "name": "Hunter x Hunter",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 79,
-      "name": "Identity V",
+      "name": "Hybrid Child",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 80,
-      "name": "Insidious",
+      "name": "Identity V",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 81,
-      "name": "Iron Lung",
+      "name": "Insidious",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 82,
-      "name": "JKT48",
+      "name": "Iron Lung",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 83,
-      "name": "JoJo's Bizarre Adventure",
+      "name": "JKT48",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 84,
-      "name": "Jujutsu Kaisen",
+      "name": "JoJo's Bizarre Adventure",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 85,
-      "name": "Kagurabachi",
+      "name": "Jujutsu Kaisen",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 86,
-      "name": "Kaiju No. 8",
+      "name": "K-On!",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 87,
-      "name": "Katekyo Hitman Reborn!",
+      "name": "Kagurabachi",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 88,
-      "name": "Kill the Lights",
+      "name": "Kaiju No. 8",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 89,
-      "name": "Kingdom Hearts",
+      "name": "Karaoke Iko",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 90,
-      "name": "Kingdom of Marionettes",
+      "name": "Katekyo Hitman Reborn!",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 91,
-      "name": "Kono Oto Tomare!",
+      "name": "Kill the Lights",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 92,
-      "name": "KPop Demon Hunters",
+      "name": "Kingdom Hearts",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 93,
-      "name": "Left 4 Dead",
+      "name": "Kingdom of Marionettes",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 94,
-      "name": "Limbus Company",
+      "name": "Kono Oto Tomare!",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 95,
-      "name": "Link Click",
+      "name": "KPop Demon Hunters",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 96,
-      "name": "Little Mushroom",
+      "name": "Left 4 Dead",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 97,
-      "name": "Lookism",
+      "name": "Limbus Company",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 98,
-      "name": "Lord of Mysteries",
+      "name": "Link Click",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 99,
-      "name": "Love and Deepspace",
+      "name": "Little Mushroom",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 100,
-      "name": "Love Bullet",
+      "name": "Lookism",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 101,
-      "name": "Magic Kaito",
+      "name": "Lord of Mysteries",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 102,
-      "name": "Marvel",
+      "name": "Love and Deepspace",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 103,
-      "name": "Marvel Rivals",
+      "name": "Love Bullet",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 104,
-      "name": "MCYT",
+      "name": "Made in Abyss",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 105,
-      "name": "Metaphor: ReFantazio",
+      "name": "Magic Kaito",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 106,
-      "name": "Minecraft",
+      "name": "Marvel",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 107,
-      "name": "Mo Dao Zu Shi",
+      "name": "Marvel Rivals",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 108,
-      "name": "Monster Hunter",
+      "name": "MCYT",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 109,
-      "name": "Moriarty the Patriot",
+      "name": "Metaphor: ReFantazio",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 110,
-      "name": "MotoGP",
+      "name": "Minecraft",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 111,
-      "name": "Mouthwashing",
+      "name": "Mo Dao Zu Shi",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 112,
-      "name": "MSCH",
+      "name": "Monster Hunter",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 113,
-      "name": "My Hero Academia",
+      "name": "Moriarty the Patriot",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 114,
-      "name": "My Little Pony",
+      "name": "MotoGP",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 115,
-      "name": "My Neighbor Totoro",
+      "name": "Mouthwashing",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 116,
-      "name": "My S-Class Hunters",
+      "name": "MSCH",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 117,
-      "name": "Naruto",
+      "name": "My Hero Academia",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 118,
-      "name": "Natsume's Book of Friends",
+      "name": "My Little Pony",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 119,
-      "name": "Ne Zha",
+      "name": "My Neighbor Totoro",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 120,
-      "name": "Neon Genesis Evangelion",
+      "name": "My S-Class Hunters",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 121,
-      "name": "NieR",
+      "name": "Naruto",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 122,
-      "name": "Nijisanji",
+      "name": "Natsume's Book of Friends",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 123,
-      "name": "Nijisanji English",
+      "name": "Ne Zha",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 124,
-      "name": "No Home",
+      "name": "Neon Genesis Evangelion",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 125,
-      "name": "Noblesse",
+      "name": "NieR",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 126,
-      "name": "Oblivion Battery",
+      "name": "Nijisanji",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 127,
-      "name": "Obsession",
+      "name": "Nijisanji English",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 128,
-      "name": "Omniscient Reader's Viewpoint",
+      "name": "No Home",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 129,
-      "name": "OMORI",
+      "name": "Noblesse",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 130,
-      "name": "One Piece",
+      "name": "Oblivion Battery",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 131,
-      "name": "One Punch Man",
+      "name": "Obsession",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 132,
-      "name": "Original",
+      "name": "Omniscient Reader's Viewpoint",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 133,
-      "name": "Oshi no Ko",
+      "name": "OMORI",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 134,
-      "name": "Ouran High School Host Club",
+      "name": "One Piece",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 135,
-      "name": "Outlast",
+      "name": "One Punch Man",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 136,
-      "name": "Pandavva",
+      "name": "Original",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 137,
-      "name": "Persona",
+      "name": "Oshi no Ko",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 138,
-      "name": "Persona 3",
+      "name": "Ouran High School Host Club",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 139,
-      "name": "Phantom Busters",
+      "name": "Outlast",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 140,
-      "name": "Pikmin",
+      "name": "Pandavva",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 141,
-      "name": "PLAVE",
+      "name": "Persona",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 142,
-      "name": "Pokémon",
+      "name": "Persona 3",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 143,
-      "name": "Project Hail Mary",
+      "name": "Phantom Busters",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 144,
-      "name": "Project Moon",
+      "name": "Pikmin",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 145,
-      "name": "Project SEKAI",
+      "name": "PLAVE",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 146,
-      "name": "Puella Magi Madoka Magica",
+      "name": "Pokémon",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 147,
-      "name": "Remnants of Filth",
+      "name": "Project Hail Mary",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 148,
-      "name": "Resident Evil",
+      "name": "Project Moon",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 149,
-      "name": "Reverse: 1999",
+      "name": "Project SEKAI",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 150,
-      "name": "Rune Factory",
+      "name": "Puella Magi Madoka Magica",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 151,
-      "name": "Ryan Gosling",
+      "name": "Remnants of Filth",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 152,
-      "name": "Sailor Moon",
+      "name": "Resident Evil",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 153,
-      "name": "Sakamoto Days",
+      "name": "Reverse: 1999",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 154,
-      "name": "Saw",
+      "name": "Rune Factory",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 155,
-      "name": "Scott Pilgrim",
+      "name": "Ryan Gosling",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 156,
-      "name": "Scum Villain's Self-Saving System",
+      "name": "Sailor Moon",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 157,
-      "name": "Sekaiichi Hatsukoi",
+      "name": "Sakamoto Days",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 158,
-      "name": "Sengoku Basara",
+      "name": "Saw",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 159,
-      "name": "SEVENTEEN",
+      "name": "Scott Pilgrim",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 160,
-      "name": "Shin Megami Tensei",
+      "name": "Scum Villain's Self-Saving System",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 161,
-      "name": "Shugo Chara!",
+      "name": "Sekaiichi Hatsukoi",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 162,
-      "name": "Silent Hill",
+      "name": "Sengoku Basara",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 163,
-      "name": "Silent Hill f",
+      "name": "SEVENTEEN",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 164,
-      "name": "Silent Reading",
+      "name": "Shin Megami Tensei",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 165,
-      "name": "Skip to Loafer",
+      "name": "Shugo Chara!",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 166,
-      "name": "Slam Dunk",
+      "name": "Silent Hill",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 167,
-      "name": "Sonic the Hedgehog",
+      "name": "Silent Hill f",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 168,
-      "name": "Special Civil Servant",
+      "name": "Silent Reading",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 169,
-      "name": "Spider-Noir",
+      "name": "Skip to Loafer",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 170,
-      "name": "SPY x FAMILY",
+      "name": "Slam Dunk",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 171,
-      "name": "Stardew Valley",
+      "name": "Sonic the Hedgehog",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 172,
-      "name": "Stranger from Hell",
+      "name": "Soul Eater",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 173,
-      "name": "Studio Ghibli",
+      "name": "Special Civil Servant",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 174,
-      "name": "Subarashiki Hibi",
+      "name": "Spider-Noir",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 175,
-      "name": "Takopi's Original Sin",
+      "name": "SPY x FAMILY",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 176,
-      "name": "Tamon's B-Side",
+      "name": "Stardew Valley",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 177,
-      "name": "Tears of Themis",
+      "name": "Stranger from Hell",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 178,
-      "name": "That Time I Got Reincarnated as a Slime",
+      "name": "Studio Ghibli",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 179,
-      "name": "The Amazing Digital Circus",
+      "name": "Subarashiki Hibi",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 180,
-      "name": "The Apothecary Diaries",
+      "name": "Takopi's Original Sin",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 181,
-      "name": "The Backrooms",
+      "name": "Tamon's B-Side",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 182,
-      "name": "The Elusive Samurai",
+      "name": "Tears of Themis",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 183,
-      "name": "The Evil Within",
+      "name": "That Time I Got Reincarnated as a Slime",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 184,
-      "name": "The Freak Circus",
+      "name": "The Amazing Digital Circus",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 185,
-      "name": "The God of High School",
+      "name": "The Apothecary Diaries",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 186,
-      "name": "The Guy She Was Interested in Wasn't a Guy at All",
+      "name": "The Backrooms",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 187,
-      "name": "The Husky and His White Cat Shizun",
+      "name": "The Elusive Samurai",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 188,
-      "name": "The Pitt",
+      "name": "The Evil Within",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 189,
-      "name": "The Prince of Tennis",
+      "name": "The Freak Circus",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 190,
-      "name": "The Summer Hikaru Died",
+      "name": "The God of High School",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 191,
-      "name": "Thousand Autumns",
+      "name": "The Guy She Was Interested in Wasn't a Guy at All",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 192,
-      "name": "Tian Bao Fuyao Lu",
+      "name": "The Husky and His White Cat Shizun",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 193,
-      "name": "Toilet-Bound Hanako-kun",
+      "name": "The Pitt",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 194,
-      "name": "Tokyo Aliens",
+      "name": "The Prince of Tennis",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 195,
-      "name": "Tokyo Debunker",
+      "name": "The Summer Hikaru Died",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 196,
-      "name": "Transformers",
+      "name": "Thousand Autumns",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 197,
-      "name": "Trigun Stampede",
+      "name": "Tian Bao Fuyao Lu",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 198,
-      "name": "Twenty One Pilots",
+      "name": "Toilet-Bound Hanako-kun",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 199,
-      "name": "Twisted Wonderland",
+      "name": "Tokyo Aliens",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 200,
-      "name": "Uma Musume: Pretty Derby",
+      "name": "Tokyo Debunker",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 201,
-      "name": "Undertale",
+      "name": "Transformers",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 202,
-      "name": "Unstable Universe",
+      "name": "Trigun Stampede",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 203,
-      "name": "Valorant",
+      "name": "Twenty One Pilots",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 204,
-      "name": "Veil",
+      "name": "Twisted Wonderland",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 205,
-      "name": "Vocaloid",
+      "name": "Uma Musume: Pretty Derby",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 206,
-      "name": "Welcome to Demon School! Iruma-kun",
+      "name": "Undertale",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 207,
-      "name": "When They Cry",
+      "name": "Unstable Universe",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 208,
-      "name": "Wind Breaker",
+      "name": "Valorant",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 209,
-      "name": "Witch Hat Atelier",
+      "name": "Veil",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 210,
-      "name": "Witch Watch",
+      "name": "Vocaloid",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 211,
-      "name": "Word of Honor",
+      "name": "Welcome to Demon School! Iruma-kun",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 212,
-      "name": "World Trigger",
+      "name": "When They Cry",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 213,
-      "name": "Wuthering Waves",
+      "name": "Wind Breaker",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 214,
-      "name": "Your Turn To Die",
+      "name": "Witch Hat Atelier",
       "kind": "event_tag",
       "parentId": null,
       "alternateNames": []
     },
     {
       "id": 215,
+      "name": "Witch Watch",
+      "kind": "event_tag",
+      "parentId": null,
+      "alternateNames": []
+    },
+    {
+      "id": 216,
+      "name": "Word of Honor",
+      "kind": "event_tag",
+      "parentId": null,
+      "alternateNames": []
+    },
+    {
+      "id": 217,
+      "name": "World Trigger",
+      "kind": "event_tag",
+      "parentId": null,
+      "alternateNames": []
+    },
+    {
+      "id": 218,
+      "name": "Wuthering Waves",
+      "kind": "event_tag",
+      "parentId": null,
+      "alternateNames": []
+    },
+    {
+      "id": 219,
+      "name": "Your Turn To Die",
+      "kind": "event_tag",
+      "parentId": null,
+      "alternateNames": []
+    },
+    {
+      "id": 220,
+      "name": "Yuru Camp",
+      "kind": "event_tag",
+      "parentId": null,
+      "alternateNames": []
+    },
+    {
+      "id": 221,
       "name": "Zenless Zone Zero",
       "kind": "event_tag",
       "parentId": null,
