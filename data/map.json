@@ -16,7 +16,16 @@
       "gap": 0,
       "distance": 5
     },
-    "labelOpacity": 1
+    "labelOpacity": 1,
+    "objectDefaults": {
+      "highlight": {
+        "label": "R",
+        "color": "#ffd84d",
+        "rotation": 0,
+        "preset": "custom",
+        "type": "section-marker"
+      }
+    }
   },
   "features": [
     {
@@ -910,630 +919,6 @@
         "height": 105.19999999999982
       },
       "kind": "booth"
-    },
-    {
-      "uid": "feature-mua4twtb-1q",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 3876.7,
-        "y": 1947.4,
-        "width": 193.4000000000001,
-        "height": 542.6999999999998
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4u5eh-1r",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 3876.7,
-        "y": 2680.1,
-        "width": 193.4000000000001,
-        "height": 458.7000000000003
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4uamh-1s",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 3876.7,
-        "y": 3331.6,
-        "width": 193.4000000000001,
-        "height": 542.8000000000002
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4v5zt-1t",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 4198.4,
-        "y": 1947.4,
-        "width": 193.4000000000001,
-        "height": 542.6999999999998
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4v5zt-1u",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 4198.4,
-        "y": 2680.1,
-        "width": 193.4000000000001,
-        "height": 458.7000000000003
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4v5zt-1v",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 4198.4,
-        "y": 3331.6,
-        "width": 193.4000000000001,
-        "height": 542.8000000000002
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4v8ti-1w",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 4526.6,
-        "y": 1947.4,
-        "width": 193.4000000000001,
-        "height": 542.6999999999998
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4v8ti-1x",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 4526.6,
-        "y": 2680.1,
-        "width": 193.4000000000001,
-        "height": 458.7000000000003
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4v8ti-1y",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 4526.6,
-        "y": 3331.6,
-        "width": 193.4000000000001,
-        "height": 542.8000000000002
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vblt-1z",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 4848.3,
-        "y": 3331.6,
-        "width": 193.4000000000001,
-        "height": 542.8000000000002
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vblt-20",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 4848.3,
-        "y": 2680.1,
-        "width": 193.4000000000001,
-        "height": 458.7000000000003
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vblt-21",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 4848.3,
-        "y": 1947.4,
-        "width": 193.4000000000001,
-        "height": 542.6999999999998
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4ve84-22",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 5170,
-        "y": 3331.6,
-        "width": 193.4000000000001,
-        "height": 542.8000000000002
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4ve84-23",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 5170,
-        "y": 2680.1,
-        "width": 193.4000000000001,
-        "height": 458.7000000000003
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4ve84-24",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 5170,
-        "y": 1947.4,
-        "width": 193.4000000000001,
-        "height": 542.6999999999998
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vhaw-27",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 6619.1,
-        "y": 2680.1,
-        "width": 193.4000000000001,
-        "height": 458.7000000000003
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vhaw-28",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 6619.1,
-        "y": 1947.4,
-        "width": 193.4000000000001,
-        "height": 542.6999999999998
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vhaw-29",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 6297.4,
-        "y": 1947.4,
-        "width": 193.4000000000001,
-        "height": 542.6999999999998
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vhaw-2a",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 6297.4,
-        "y": 2680.1,
-        "width": 193.4000000000001,
-        "height": 458.7000000000003
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vhaw-2b",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 6297.4,
-        "y": 3331.6,
-        "width": 193.4000000000001,
-        "height": 542.8000000000002
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vhaw-2c",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 6619.1,
-        "y": 3331.6,
-        "width": 193.4000000000001,
-        "height": 542.8000000000002
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vhaw-2e",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 5969.2,
-        "y": 1947.4,
-        "width": 193.4000000000001,
-        "height": 542.6999999999998
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vhaw-2f",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 5969.2,
-        "y": 2680.1,
-        "width": 193.4000000000001,
-        "height": 458.7000000000003
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vhaw-2g",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 5969.2,
-        "y": 3331.6,
-        "width": 193.4000000000001,
-        "height": 542.8000000000002
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vhaw-2h",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 5647.5,
-        "y": 1947.4,
-        "width": 193.4000000000001,
-        "height": 542.6999999999998
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vhaw-2i",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 5647.5,
-        "y": 2680.1,
-        "width": 193.4000000000001,
-        "height": 458.7000000000003
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vhaw-2j",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 5647.5,
-        "y": 3331.6,
-        "width": 193.4000000000001,
-        "height": 542.8000000000002
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vmub-2k",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 7746.6,
-        "y": 3331.6,
-        "width": 193.4000000000001,
-        "height": 542.8000000000002
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vmub-2l",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 7746.6,
-        "y": 2680.1,
-        "width": 193.4000000000001,
-        "height": 458.7000000000003
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vmub-2m",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 7424.9,
-        "y": 2680.1,
-        "width": 193.4000000000001,
-        "height": 458.7000000000003
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vmub-2n",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 7424.9,
-        "y": 3331.6,
-        "width": 193.4000000000001,
-        "height": 542.8000000000002
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vmub-2o",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 7746.6,
-        "y": 1947.4,
-        "width": 193.4000000000001,
-        "height": 542.6999999999998
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vmub-2p",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 7424.9,
-        "y": 1947.4,
-        "width": 193.4000000000001,
-        "height": 542.6999999999998
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vmub-2q",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 7096.7,
-        "y": 1947.4,
-        "width": 193.4000000000001,
-        "height": 542.6999999999998
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vmub-2r",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 7096.7,
-        "y": 2680.1,
-        "width": 193.4000000000001,
-        "height": 458.7000000000003
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vmub-2s",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 7096.7,
-        "y": 3331.6,
-        "width": 193.4000000000001,
-        "height": 542.8000000000002
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vpz4-2t",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 8068.3,
-        "y": 3331.6,
-        "width": 193.4000000000001,
-        "height": 542.8000000000002
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vpz4-2u",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 8068.3,
-        "y": 2680.1,
-        "width": 193.4000000000001,
-        "height": 458.7000000000003
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
-    },
-    {
-      "uid": "feature-mua4vpz4-2v",
-      "id": null,
-      "status": "accepted",
-      "geometry": {
-        "type": "rect",
-        "x": 8068.3,
-        "y": 1947.4,
-        "width": 193.4000000000001,
-        "height": 542.6999999999998
-      },
-      "kind": "area",
-      "label": "",
-      "color": "#8000ff",
-      "rotation": 0
     },
     {
       "uid": "feature-mua4x5bd-2x",
@@ -26434,7 +25819,295 @@
       "color": "#111827",
       "themeAware": true,
       "rotation": 0
+    },
+    {
+      "uid": "feature-mub57u5b-1",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 3678.1,
+        "y": 1639.5,
+        "width": 141.30000000000018,
+        "height": 106.90000000000009
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "P",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub582ma-2",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 8530.1,
+        "y": 4025.5,
+        "width": 105.10000000000036,
+        "height": 98
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "R",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub58b32-3",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 8395.3,
+        "y": 2960.4,
+        "width": 105.10000000000036,
+        "height": 224.9000000000001
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "R",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub58jqs-4",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 4198.4,
+        "y": 2538.4,
+        "width": 193.4000000000001,
+        "height": 98
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "B",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub58jqs-5",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 4526.6,
+        "y": 2538.4,
+        "width": 193.4000000000001,
+        "height": 98
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "C",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub58jqs-6",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 4848.3,
+        "y": 2538.4,
+        "width": 193.4000000000001,
+        "height": 98
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "D",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub58jqs-7",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 5170,
+        "y": 2538.4,
+        "width": 193.4000000000001,
+        "height": 98
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "E",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub58jqs-8",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 5647.5,
+        "y": 2538.4,
+        "width": 193.4000000000001,
+        "height": 98
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "F",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub58jqs-9",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 5969.2,
+        "y": 2538.4,
+        "width": 193.4000000000001,
+        "height": 98
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "G",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub58jqs-a",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 6297.4,
+        "y": 2538.4,
+        "width": 193.4000000000001,
+        "height": 98
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "H",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub58jqs-b",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 6619.1,
+        "y": 2538.4,
+        "width": 193.4000000000001,
+        "height": 98
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "J",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub58jqs-c",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 7096.7,
+        "y": 2538.4,
+        "width": 193.4000000000001,
+        "height": 98
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "K",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub58jqs-d",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 7424.9,
+        "y": 2538.4,
+        "width": 193.4000000000001,
+        "height": 98
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "L",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub58jqs-e",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 7746.6,
+        "y": 2538.4,
+        "width": 193.4000000000001,
+        "height": 98
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "M",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub58jqs-f",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 8068.3,
+        "y": 2538.4,
+        "width": 193.4000000000001,
+        "height": 98
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "N",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
+    },
+    {
+      "uid": "feature-mub58jqs-g",
+      "id": null,
+      "status": "accepted",
+      "geometry": {
+        "type": "rect",
+        "x": 3879.2,
+        "y": 2538.4,
+        "width": 193.4000000000001,
+        "height": 98
+      },
+      "kind": "highlight",
+      "preset": "custom",
+      "label": "A",
+      "color": "#ffd84d",
+      "rotation": 0,
+      "type": "section-marker"
     }
   ],
-  "updatedAt": "2026-09-20T20:31:11.610Z"
+  "updatedAt": "2026-09-21T11:11:44.217Z"
 }
