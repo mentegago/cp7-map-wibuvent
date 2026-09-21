@@ -16,7 +16,7 @@ import 'version_service.dart';
 enum CreatorDataStatus { idle, loading, updating, updated, error }
 
 class CreatorDataProvider extends ChangeNotifier {
-  static final Uri _configBase = Uri.parse('https://cp7-config.nnt.gg/');
+  static final Uri _configBase = Uri.parse('https://cp7-config.wibuvent.com/');
   static const String _bundledCatalog = 'data/catalog-initial.json';
   static const String _bundledFandoms = 'data/fandoms-initial.json';
   static const String _bundledVersion = 'data/last-updated-initial.json';

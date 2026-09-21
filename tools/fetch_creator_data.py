@@ -5,7 +5,7 @@ import urllib.request
 from pathlib import Path
 from urllib.parse import urljoin
 
-BASE_URL = "https://cp7-config.nnt.gg/"
+BASE_URL = "https://cp7-config.wibuvent.com/"
 DATA_DIR = Path(__file__).parent.parent / "data"
 
 

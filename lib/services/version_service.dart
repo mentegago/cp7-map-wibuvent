@@ -24,7 +24,7 @@ class VersionInfo {
 
 class VersionService {
   static const String _versionUrl =
-      'https://cp7-config.nnt.gg/last-updated.json';
+      'https://cp7-config.wibuvent.com/last-updated.json';
   static const int _clientVersion = 16; // Current client version
 
   static Future<VersionInfo?> fetchVersionInfo() async {
