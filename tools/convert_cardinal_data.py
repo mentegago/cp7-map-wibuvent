@@ -109,14 +109,10 @@ def convert(document: dict) -> tuple[dict, dict]:
             for link in circle.get("urls") or []
             if isinstance(link, dict) and normalize_url(str(link.get("url", "")))
         ]
-        if uuid:
-            links.insert(0, {
-                "type": "circle_page",
-                "url": f"https://www.wibuvent.com/events/comipara-7/circles/{uuid}#event-content",
-            })
         exhibitors.append(
             {
                 "id": str(stable_id(uuid, used_ids)),
+                "circlePageUrl": f"https://www.wibuvent.com/events/comipara-7/circles/{uuid}#event-content" if uuid else None,
                 "name": str(circle.get("name") or "Unnamed circle"),
                 "spaces": [
                     {"code": str(code), "type": "booth"}

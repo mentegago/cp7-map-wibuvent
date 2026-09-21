@@ -40,6 +40,7 @@ class CreatorAssets {
 
 class Creator {
   final int id;
+  final String? circlePageUrl;
   final String name;
   final List<CreatorSpace> spaces;
   final List<String> attendanceDates;
@@ -54,6 +55,7 @@ class Creator {
 
   Creator({
     required this.id,
+    this.circlePageUrl,
     required this.name,
     required this.spaces,
     required this.attendanceDates,
@@ -81,6 +83,7 @@ class Creator {
 
     return Creator(
       id: int.parse(json['id'].toString()),
+      circlePageUrl: json['circlePageUrl']?.toString(),
       name: json['name'].toString(),
       spaces: ((json['spaces'] as List?) ?? const [])
           .whereType<Map>()
