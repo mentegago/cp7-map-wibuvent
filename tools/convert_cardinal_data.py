@@ -90,7 +90,12 @@ def convert(document: dict) -> tuple[dict, dict]:
     used_ids: set[int] = set()
     exhibitors = []
     for circle in circles:
-        uuid = str(circle.get("id", ""))
+        uuid = str(circle.get("id", "")).strip()
+        photo_works = [
+            str(url).strip()
+            for url in circle.get("photoworks") or []
+            if str(url).strip()
+        ]
         fandom_ids = [
             fandom_id_by_key[str(name).strip().casefold()]
             for name in circle.get("fandoms") or []
@@ -104,6 +109,11 @@ def convert(document: dict) -> tuple[dict, dict]:
             for link in circle.get("urls") or []
             if isinstance(link, dict) and normalize_url(str(link.get("url", "")))
         ]
+        if uuid:
+            links.insert(0, {
+                "type": "circle_page",
+                "url": f"https://www.wibuvent.com/events/comipara-7/circles/{uuid}#event-content",
+            })
         exhibitors.append(
             {
                 "id": str(stable_id(uuid, used_ids)),
@@ -117,8 +127,8 @@ def convert(document: dict) -> tuple[dict, dict]:
                 "contentRating": None,
                 "offerings": [str(value) for value in circle.get("works_type") or []],
                 "assets": {
-                    "thumbnail": circle.get("circle_cut"),
-                    "gallery": [str(url) for url in circle.get("photoworks") or []],
+                    "thumbnail": circle.get("circle_cut") or (photo_works[0] if photo_works else None),
+                    "gallery": photo_works,
                 },
                 "links": links,
                 "fandomIds": fandom_ids,
