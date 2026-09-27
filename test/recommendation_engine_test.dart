@@ -154,6 +154,90 @@ void main() {
     expect(results.first.creator.id, 2);
   });
 
+  test('specific generic tags from favorites qualify exact matches', () {
+    const engine = RecommendationEngine();
+    final yuri = Fandom(
+      id: 225,
+      name: 'Girls Love / Yuri',
+      kind: 'generic_tag',
+      parentId: null,
+    );
+    final blue = Fandom(
+      id: 1,
+      name: 'Blue Archive',
+      kind: 'franchise',
+      parentId: null,
+    );
+    Creator tagged(int id, Fandom fandom) => Creator(
+          id: id,
+          name: 'Creator $id',
+          spaces: [CreatorSpace(code: 'A-$id')],
+          attendanceDates: const ['2026-10-31'],
+          fandoms: [fandom],
+        );
+    final creators = [
+      for (var id = 1; id <= 8; id++) tagged(id, yuri),
+      for (var id = 9; id <= 100; id++) tagged(id, blue),
+    ];
+
+    final results = engine.recommend(
+      creators: creators,
+      profile: RecommendationProfile(),
+      favoriteIds: {1},
+      sessionExposureIds: const {},
+      now: now,
+    );
+
+    expect(results.map((result) => result.creator.id).toSet(),
+        {for (var id = 2; id <= 8; id++) id});
+  });
+
+  test('explicit Yuri interest is not crowded out by Blue Archive volume', () {
+    const engine = RecommendationEngine();
+    final yuri = Fandom(
+      id: 225,
+      name: 'Girls Love / Yuri',
+      kind: 'generic_tag',
+      parentId: null,
+    );
+    final blue = Fandom(
+      id: 1,
+      name: 'Blue Archive',
+      kind: 'franchise',
+      parentId: null,
+    );
+    Creator tagged(int id, List<Fandom> fandoms) => Creator(
+          id: id,
+          name: 'Creator $id',
+          spaces: [CreatorSpace(code: 'A-$id')],
+          attendanceDates: const ['2026-10-31'],
+          fandoms: fandoms,
+        );
+    final creators = [
+      tagged(1, [yuri, blue]),
+      tagged(2, [yuri, blue]),
+      for (var id = 3; id <= 13; id++) tagged(id, [yuri]),
+      for (var id = 14; id <= 563; id++) tagged(id, [blue]),
+    ];
+    final profile = RecommendationProfile(explicitFandomSignals: {
+      yuri.id: FandomSignal(strength: 5, lastUpdated: now),
+    });
+
+    final results = engine.recommend(
+      creators: creators,
+      profile: profile,
+      favoriteIds: {1, 2},
+      sessionExposureIds: const {},
+      userSeed: 42,
+      now: now,
+    );
+
+    expect(
+      results.where((result) => result.creator.fandoms.contains(yuri)).length,
+      greaterThanOrEqualTo(7),
+    );
+  });
+
   test('booth proximity uses precomputed walking distance', () {
     final profile = RecommendationProfile(
       creatorInteractions: {

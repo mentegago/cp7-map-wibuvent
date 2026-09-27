@@ -2,6 +2,7 @@ class BoothProximityData {
   static const int currentSchemaVersion = 1;
   static const BoothProximityData empty = BoothProximityData._(
     boothIndices: {},
+    booths: [],
     distances: [],
     mapSha256: '',
     maxDistance: 0,
@@ -9,6 +10,7 @@ class BoothProximityData {
   );
 
   final Map<String, int> _boothIndices;
+  final List<String> _booths;
   final List<Map<int, int>> _distances;
   final String mapSha256;
   final int maxDistance;
@@ -16,11 +18,13 @@ class BoothProximityData {
 
   const BoothProximityData._({
     required Map<String, int> boothIndices,
+    required List<String> booths,
     required List<Map<int, int>> distances,
     required this.mapSha256,
     required this.maxDistance,
     required this.maxNeighbors,
   })  : _boothIndices = boothIndices,
+        _booths = booths,
         _distances = distances;
 
   factory BoothProximityData.fromJson(Map<String, dynamic> json) {
@@ -63,6 +67,7 @@ class BoothProximityData {
         for (var index = 0; index < booths.length; index++)
           booths[index]: index,
       },
+      booths: booths,
       distances: distances,
       mapSha256: json['map_sha256']?.toString() ?? '',
       maxDistance: (json['max_distance'] as num?)?.toInt() ?? 0,
@@ -72,15 +77,24 @@ class BoothProximityData {
 
   int? distanceBetween(String firstBooth, String secondBooth) {
     final first =
-        _boothIndices[firstBooth] ?? _boothIndices[_canonicalBooth(firstBooth)];
+        _boothIndices[firstBooth] ?? _boothIndices[canonicalBooth(firstBooth)];
     final second = _boothIndices[secondBooth] ??
-        _boothIndices[_canonicalBooth(secondBooth)];
+        _boothIndices[canonicalBooth(secondBooth)];
     if (first == null || second == null) return null;
     if (first == second) return 0;
     return _distances[first][second] ?? _distances[second][first];
   }
 
-  static String _canonicalBooth(String booth) {
+  Map<String, int> neighborsOf(String booth) {
+    final index = _boothIndices[booth] ?? _boothIndices[canonicalBooth(booth)];
+    if (index == null) return const {};
+    return {
+      for (final entry in _distances[index].entries)
+        _booths[entry.key]: entry.value,
+    };
+  }
+
+  static String canonicalBooth(String booth) {
     final match = RegExp(r'^(?:([A-Z]+)-)?0*(\d+)([A-Z]?)$')
         .firstMatch(booth.trim().toUpperCase());
     if (match == null) return booth.trim();

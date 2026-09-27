@@ -261,6 +261,7 @@ class _DesktopSidebarState extends State<DesktopSidebar> {
           onCreatorSelected: _handleCreatorSelected,
           onRecommendationSelected: _handleRecommendationSelected,
           scrollController: _searchScrollController,
+          homeVisible: widget.selectedCreator == null || _showSearchList,
           onShouldHideListScreen: () {},
           onClearSearch: () {
             _searchController.clear();

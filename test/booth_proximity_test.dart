@@ -32,26 +32,21 @@ void main() {
         lessThanOrEqualTo(booths.length * 48));
   });
 
-  test('same and side-by-side booths have short walking distances', () {
-    expect(proximity.distanceBetween('Y-32b', 'Y-32b'), 0);
-    expect(proximity.distanceBetween('Y-32b', 'Y-32a'), lessThanOrEqualTo(2));
-    expect(proximity.distanceBetween('Y-33a', 'Y-33b'), lessThanOrEqualTo(2));
+  test('same and nearby CP7 booths have short walking distances', () {
+    expect(proximity.distanceBetween('A-1', 'A-1'), 0);
+    expect(proximity.distanceBetween('A-1', 'A-2'), lessThanOrEqualTo(5));
   });
 
-  test('new semantic map includes creator and corporate booths', () {
+  test('CP7 proximity includes its mapped booths', () {
     final booths = (rawData['booths'] as List<dynamic>).cast<String>();
-    expect(booths.length, greaterThan(3000));
-    expect(booths, containsAll(<String>['Y-32a', '1207', '1208']));
+    expect(booths.length, greaterThan(500));
+    expect(booths, containsAll(<String>['A-1', 'P-1', 'X-21']));
   });
 
-  test('booth lookup normalizes sectioned and sectionless IDs', () {
+  test('booth lookup normalizes CP7 booth numbers', () {
     expect(
-      proximity.distanceBetween('Y-032B', 'Y-32a'),
-      proximity.distanceBetween('Y-32b', 'Y-032A'),
-    );
-    expect(
-      proximity.distanceBetween('01208', '1209'),
-      proximity.distanceBetween('1208', '01209'),
+      proximity.distanceBetween('A-001', 'A-2'),
+      proximity.distanceBetween('A-1', 'A-002'),
     );
   });
 }

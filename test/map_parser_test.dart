@@ -148,22 +148,21 @@ void main() {
     final layout = MapParser.parseMapLayout(source);
 
     expect(layout.schemaVersion, 2);
-    expect(layout.features.length, greaterThan(3000));
+    expect(layout.features.length, greaterThan(1500));
     expect(
       layout.features.where(
-        (feature) =>
-            feature.isBooth && RegExp(r'^\d').hasMatch(feature.content),
+        (feature) => feature.isBooth && feature.content.startsWith('P-'),
       ),
       isNotEmpty,
     );
     expect(layout.features.where((feature) => feature.isHighlight), isNotEmpty);
     expect(
       layout.features.where((feature) => feature.isSectionMarker).length,
-      109,
+      31,
     );
     expect(
       layout.features.where((feature) => feature.isBoothSuffixMarker).length,
-      2854,
+      greaterThan(800),
     );
   });
 }

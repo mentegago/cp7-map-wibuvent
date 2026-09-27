@@ -122,7 +122,7 @@ class FavoritesService extends ChangeNotifier {
       return [];
     }
 
-    final idsJson = _prefs!.getStringList(_favoritesIdsKey) ?? [];
+    final idsJson = _prefs!.getStringList(_favoritesIdsKey) ?? const <String>[];
     return idsJson
         .map((idString) => int.tryParse(idString))
         .whereType<int>()

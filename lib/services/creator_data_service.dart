@@ -46,6 +46,7 @@ class CreatorDataProvider extends ChangeNotifier {
 
   CreatorCatalogIndex? get _activeIndex => _customIndex ?? _fullIndex;
   List<Creator>? get creators => _activeIndex?.creators;
+  int? get currentDataVersion => _currentDataVersion;
   Map<String, List<Creator>>? get boothToCreators =>
       _activeIndex?.creatorsByBooth;
   Map<int, Fandom> get fandomById => _fandomById;

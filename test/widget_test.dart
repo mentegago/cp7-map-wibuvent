@@ -14,10 +14,10 @@ void main() {
 
     await provider.initialize();
 
-    expect(provider.creators, hasLength(1478));
+    expect(provider.creators, hasLength(363));
     expect(provider.fandomById, isNotEmpty);
     final cachedSnapshot = (await SharedPreferences.getInstance())
-        .getString('cf23_catalog_snapshot_v3');
+        .getString('cp7_catalog_snapshot_v3');
     expect(cachedSnapshot, isNotNull);
     final cachedJson = json.decode(cachedSnapshot!) as Map<String, dynamic>;
     expect(cachedJson['version'], isPositive);
@@ -28,7 +28,7 @@ void main() {
 
     final cachedProvider = CreatorDataProvider(enableRemoteUpdates: false);
     await cachedProvider.initialize();
-    expect(cachedProvider.creators, hasLength(1478));
+    expect(cachedProvider.creators, hasLength(363));
     expect(cachedProvider.fandomIdForName('Blue Archive'), isNotNull);
     cachedProvider.dispose();
   });

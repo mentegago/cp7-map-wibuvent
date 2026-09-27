@@ -25,6 +25,7 @@ class CreatorListView extends StatefulWidget {
   final bool showFandomSuggestions;
   final ScrollPhysics? scrollPhysics;
   final double bottomPadding;
+  final bool homeVisible;
 
   const CreatorListView({
     super.key,
@@ -39,6 +40,7 @@ class CreatorListView extends StatefulWidget {
     this.showFandomSuggestions = true,
     this.scrollPhysics,
     this.bottomPadding = 0,
+    this.homeVisible = true,
   });
 
   @override
@@ -102,6 +104,11 @@ class _CreatorListViewState extends State<CreatorListView> {
 
   @override
   Widget build(BuildContext context) {
+    context.read<RecommendationService>().setHomeVisible(
+          widget.homeVisible &&
+              widget.searchQuery.isEmpty &&
+              !context.read<CreatorDataProvider>().isCreatorCustomListMode,
+        );
     return widget.searchQuery.isNotEmpty
         ? _buildSearchResults(context)
         : _buildMainView(context, widget.onShouldHideListScreen);
@@ -243,6 +250,9 @@ class _CreatorListViewState extends State<CreatorListView> {
         : recommendationService.recommendationsFor(
             creators: widget.creators,
             favoriteIds: favoriteIds,
+            allFandoms: context.read<CreatorDataProvider>().fandomById,
+            catalogVersion:
+                context.read<CreatorDataProvider>().currentDataVersion ?? 0,
           );
     final popularFandomSuggestions = _fandomSuggestions;
     final fandomSuggestions = isCreatorCustomListMode
@@ -251,6 +261,7 @@ class _CreatorListViewState extends State<CreatorListView> {
             creators: widget.creators,
             favoriteIds: favoriteIds,
             popularFandoms: popularFandomSuggestions,
+            allFandoms: context.read<CreatorDataProvider>().fandomById,
           );
     final hasFandomSuggestions = widget.showFandomSuggestions &&
         fandomSuggestions.isNotEmpty &&
@@ -468,6 +479,7 @@ class _CreatorListViewState extends State<CreatorListView> {
           creators: widget.creators,
           favoriteIds: favoriteIds,
           popularFandoms: data.popularSearches,
+          allFandoms: data.fandomById,
         );
   }
 }

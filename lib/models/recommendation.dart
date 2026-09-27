@@ -159,6 +159,7 @@ class RecommendationResult {
   final double itineraryAffinity;
   final List<String> matchingFandoms;
   final List<int> nearbyPlannedCreatorIds;
+  final int matchTier;
 
   const RecommendationResult({
     required this.creator,
@@ -167,5 +168,6 @@ class RecommendationResult {
     required this.itineraryAffinity,
     this.matchingFandoms = const [],
     this.nearbyPlannedCreatorIds = const [],
+    this.matchTier = 0,
   });
 }

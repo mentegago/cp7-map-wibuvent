@@ -493,6 +493,7 @@ class ExpandableSearchState extends State<ExpandableSearch> {
                               showFandomSuggestions: false,
                               scrollPhysics: const ClampingScrollPhysics(),
                               bottomPadding: _bottomSafeArea,
+                              homeVisible: widget.selectedCreator == null,
                             );
                           },
                         ),
@@ -681,6 +682,7 @@ class ExpandableSearchState extends State<ExpandableSearch> {
           creators: widget.creators,
           favoriteIds: favoriteIds,
           popularFandoms: data.popularSearches,
+          allFandoms: data.fandomById,
         );
   }
 }

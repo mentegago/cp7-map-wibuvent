@@ -155,7 +155,7 @@ void main() {
     await Future<void>.delayed(const Duration(milliseconds: 600));
 
     final raw = (await SharedPreferences.getInstance())
-        .getString('cf23_recommendation_profile_v2');
+        .getString('cp7_recommendation_profile_v2');
     expect(raw, isNotNull);
     final profile = json.decode(raw!) as Map<String, dynamic>;
     final fandomSignals =
@@ -164,12 +164,29 @@ void main() {
     service.dispose();
   });
 
-  test('profile changes batch and refresh in the background', () async {
+  test('a visible home list stays steady while later results are queued',
+      () async {
     final service = RecommendationService(
       refreshDelay: const Duration(milliseconds: 80),
     );
     await service.initialize();
-    final creators = [testCreator(1), testCreator(2), testCreator(3)];
+    final creators = [
+      testCreator(1),
+      Creator(
+        id: 2,
+        name: 'Hololive Booth',
+        spaces: const [CreatorSpace(code: 'B-2')],
+        attendanceDates: const ['2026-10-31', '2026-11-01'],
+        fandoms: [
+          Fandom(
+              id: 2,
+              name: 'Hololive',
+              kind: 'publisher_umbrella',
+              parentId: null),
+        ],
+      ),
+    ];
+    service.setHomeVisible(true);
     expect(
       service.recommendationsFor(
         creators: creators,
@@ -186,17 +203,6 @@ void main() {
     });
 
     service.recordFandomInterest(1);
-    await Future<void>.delayed(const Duration(milliseconds: 30));
-    service.recordFandomInterest(2);
-
-    final immediate = service.recommendationsFor(
-      creators: creators,
-      favoriteIds: const {},
-    );
-    expect(immediate, isEmpty);
-    await Future<void>.delayed(const Duration(milliseconds: 40));
-    expect(notifications, 0);
-
     await completer.future.timeout(const Duration(seconds: 5));
     final published = service.recommendationsFor(
       creators: creators,
@@ -204,14 +210,75 @@ void main() {
     );
     expect(published, isNotEmpty);
 
+    service.recordFandomInterest(2);
     service.recordFandomInterest(3);
+    await Future<void>.delayed(const Duration(milliseconds: 120));
     expect(
       service.recommendationsFor(
           creators: creators,
           favoriteIds: const {}).map((result) => result.creator.id),
       published.map((result) => result.creator.id),
     );
+    service.setHomeVisible(false);
+    service.setHomeVisible(true);
+    expect(notifications, 1);
+    expect(
+      service.recommendationsFor(creators: creators, favoriteIds: const {}),
+      hasLength(2),
+    );
     service.dispose();
+  });
+
+  test('a later calculation waits until after the previous completion',
+      () async {
+    final service = RecommendationService(
+      refreshDelay: const Duration(milliseconds: 200),
+    );
+    await service.initialize();
+    final creators = [testCreator(1), testCreator(2)];
+    service.recommendationsFor(creators: creators, favoriteIds: const {});
+    service.recordFandomInterest(1);
+    final firstReady = Completer<void>();
+    service.addListener(() {
+      if (!firstReady.isCompleted) firstReady.complete();
+    });
+    await firstReady.future.timeout(const Duration(seconds: 5));
+    await Future<void>.delayed(const Duration(milliseconds: 20));
+    final preferences = await SharedPreferences.getInstance();
+    final firstCache = preferences.getString('cp7_recommendation_results_v5');
+    expect(firstCache, isNotNull);
+
+    service.recordFandomInterest(2);
+    await Future<void>.delayed(const Duration(milliseconds: 60));
+    expect(preferences.getString('cp7_recommendation_results_v5'), firstCache);
+    await Future<void>.delayed(const Duration(milliseconds: 300));
+    expect(preferences.getString('cp7_recommendation_results_v5'),
+        isNot(firstCache));
+    service.dispose();
+  });
+
+  test('a valid saved recommendation is reused after reload', () async {
+    final first = RecommendationService();
+    await first.initialize();
+    final creators = [testCreator(1), testCreator(2)];
+    first.recommendationsFor(creators: creators, favoriteIds: const {});
+    final ready = Completer<void>();
+    first.addListener(() {
+      if (!ready.isCompleted) ready.complete();
+    });
+    first.recordFandomInterest(1);
+    await ready.future.timeout(const Duration(seconds: 5));
+    await Future<void>.delayed(const Duration(milliseconds: 600));
+    first.dispose();
+
+    final second = RecommendationService();
+    await second.initialize();
+    final restored = second.recommendationsFor(
+      creators: creators,
+      favoriteIds: const {},
+    );
+    expect(restored, isNotEmpty);
+    second.dispose();
   });
 
   test('disabled service skips profiling and recommendation work', () async {
